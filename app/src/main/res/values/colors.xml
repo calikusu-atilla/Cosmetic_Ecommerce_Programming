@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Frame_Bg_Color">#EAE7DC</color>
+    <color name="Primary_Light">#FBF9F6</color>
+    <color name="Primary_Light_hover">#F9F6F2</color>
+    <color name="Primary_Light_active">#F3ECE3</color>
+    <color name="Primary_Normal">#D8C3A5</color>
+    <color name="Primary_Normal_hover">#C2B095</color>
+    <color name="Primary_Normal_active">#AD9C84</color>
+    <color name="Primary_Danker">#4C443A</color>
+    <color name="Secondery_Light">#F4F4F3</color>
+    <color name="Secondery_Light_hover">#EEEEED</color>
+    <color name="Secondery_Light_active">#DCDCDB</color>
+    <color name="Secondery_Normal">#8E8D8A</color>
+    <color name="Secondery_Normal_hover">#807F7C</color>
+    <color name="Secondery_Normal_active">#72716E</color>
+    <color name="Secondery_Dark">#6B6A68</color>
+    <color name="Secondery_Dark_hover">#555553</color>
+    <color name="Secondery_Dark_active">#403F3E</color>
+    <color name="Secondery_Danker">#323130</color>
+    <color name="Tertiary_Light">#FDF2F1</color>
+    <color name="Tertiary_Light_hover">#FCECEA</color>
+    <color name="Tertiary_Light_active">#F8D8D4</color>
+    <color name="Tertiary_Normal">#E98074</color>
+    <color name="Tertiary_Normal_hover">#D27368</color>
+    <color name="Tertiary_Normal_active">#BA665D</color>
+    <color name="Tertiary_Dark">#AF6057</color>
+    <color name="Tertiary_Dark_hover">#8C4D46</color>
+    <color name="Tertiary_Dark_active">#693A34</color>
+    <color name="Tertiary_Danker">#522D29</color>
+    <color name="Quaternary_Light">#FDEFED</color>
+    <color name="Quaternary_Light_hover">#FCE6E5</color>
+    <color name="Quaternary_Light_active">#F8CCC8</color>
+    <color name="Quaternary_Normal">#E85A4F</color>
+    <color name="Quaternary_Normal_hover">#D15147</color>
+    <color name="Quaternary_Normal_active">#BA483F</color>
+    <color name="Quaternary_Dark">#AE443B</color>
+    <color name="Quaternary_Dark_hover">#8B362F</color>
+    <color name="Quaternary_Dark_active">#682824</color>
+    <color name="Quaternary_Danker">#511F1C</color>
+
+</resources>
