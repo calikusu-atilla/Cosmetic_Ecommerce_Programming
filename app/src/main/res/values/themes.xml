@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.CosmeticEcommerceProgramming" parent="Base.Theme.CosmeticEcommerceProgramming" />
+
+    <style name="CircleImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10%</item>
+    </style>
 </resources>

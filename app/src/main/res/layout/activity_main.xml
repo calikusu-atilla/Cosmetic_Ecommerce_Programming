@@ -58,8 +58,9 @@
                     android:id="@+id/imageView2"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
+                    android:layout_marginEnd="4dp"
                     android:background="@drawable/icons_bg"
-                    app:srcCompat="@drawable/search_light_icon" />
+                    app:srcCompat="@drawable/search_icon" />
 
                 <ImageView
                     android:id="@+id/imageView4"
@@ -67,7 +68,7 @@
                     android:layout_height="32dp"
                     android:background="@drawable/icons_bg"
                     android:layout_marginEnd="16dp"
-                    app:srcCompat="@drawable/bell_light_icon" />
+                    app:srcCompat="@drawable/bell_icon" />
 
             </LinearLayout>
 
