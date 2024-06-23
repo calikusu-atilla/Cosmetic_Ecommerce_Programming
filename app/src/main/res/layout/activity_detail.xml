@@ -67,7 +67,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/viewPager22"
+                app:layout_constraintTop_toBottomOf="@+id/viewPagerSlider"
                 app:selectedDotColor="@color/Quaternary_Dark"
                 tools:visibility="visible" />
 
