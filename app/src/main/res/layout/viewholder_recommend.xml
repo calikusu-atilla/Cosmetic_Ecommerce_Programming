@@ -7,7 +7,7 @@
     android:layout_margin="8dp">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView"
+        android:id="@+id/pic"
         android:layout_width="164dp"
         android:layout_height="164dp"
         app:shapeAppearanceOverlay="@style/CircleImageView"
@@ -28,7 +28,7 @@
         app:srcCompat="@drawable/fav_icon_pasif" />
 
     <TextView
-        android:id="@+id/PriceTxt"
+        android:id="@+id/priceTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$-"
@@ -36,7 +36,7 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/pic" />
 
     <TextView
         android:id="@+id/titleTxt"
@@ -50,7 +50,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PriceTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/priceTxt" />
 
     <TextView
         android:id="@+id/ratingTxt"
@@ -59,7 +59,7 @@
         android:text="0"
         app:layout_constraintBottom_toTopOf="@+id/titleTxt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PriceTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/priceTxt" />
 
     <ImageView
         android:id="@+id/imageView6"

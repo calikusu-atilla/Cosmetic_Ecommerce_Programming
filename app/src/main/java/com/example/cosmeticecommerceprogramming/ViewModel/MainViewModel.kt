@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.cosmeticecommerceprogramming.Model.CategoryModel
+import com.example.cosmeticecommerceprogramming.Model.ItemsModel
 import com.example.cosmeticecommerceprogramming.Model.SliderModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -16,10 +17,34 @@ class MainViewModel():ViewModel() {
     private val firebaseDatabase = FirebaseDatabase.getInstance() // Firebese veritabanı oluşturuldu
 
     private val _banner = MutableLiveData<List<SliderModel>>()   //banner verileri tutulmak için mutablelivedata oluşturuldu -> mutablelivedata: gözlemlenerek veri değişikliklerine tepki veri
-    private val _category = MutableLiveData<MutableList<CategoryModel>> ()
+    private val _category = MutableLiveData<MutableList<CategoryModel>>()
+    private val _recommend = MutableLiveData<MutableList<ItemsModel>>()
 
     val banner : MutableLiveData<List<SliderModel>> = _banner
     val category : LiveData<MutableList<CategoryModel>> = _category
+    val recommend : LiveData<MutableList<ItemsModel>> = _recommend
+
+    fun loadRecommended(){
+        val Ref = firebaseDatabase.getReference("Items")
+        Ref.addValueEventListener((object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+               val list = mutableListOf<ItemsModel>()
+                for (child in snapshot.children){
+                    val data = child.getValue(ItemsModel::class.java)
+                    if (data!=null){
+                        list.add(data)
+                    }
+                }
+                _recommend.value = list
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        }))
+
+
+    }
 
     fun loadCategory() {
         val Ref = firebaseDatabase.getReference("Category")
@@ -38,7 +63,6 @@ class MainViewModel():ViewModel() {
             override fun onCancelled(error: DatabaseError) {
 
             }
-
         }
         )
     }
@@ -64,9 +88,6 @@ class MainViewModel():ViewModel() {
             override fun onCancelled(error: DatabaseError) { // veri çekilirken hata oluşursa çağrılır ve hata durumu log.e kaydolur
 
             }
-
         })
     }
-
-
 }

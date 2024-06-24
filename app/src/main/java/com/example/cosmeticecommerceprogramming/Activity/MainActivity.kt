@@ -3,11 +3,13 @@ package com.example.cosmeticecommerceprogramming.Activity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.example.cosmeticecommerceprogramming.Adapter.CategoryAdapter
+import com.example.cosmeticecommerceprogramming.Adapter.RecommendationAdapter
 import com.example.cosmeticecommerceprogramming.Adapter.SliderAdapter
 import com.example.cosmeticecommerceprogramming.Model.SliderModel
 import com.example.cosmeticecommerceprogramming.ViewModel.MainViewModel
@@ -25,6 +27,7 @@ class MainActivity : BaseActivity() {
 
         initBanners() // Banner/slider bileşenini başlatan fonksiyon
         initCategory()  // Kategori bileşenini başlatan fonksiyon
+        initRecommended() // Recommended bileşenini başlatan fonksiyon
 
 
     }
@@ -73,5 +76,17 @@ class MainActivity : BaseActivity() {
         })
         viewModel.loadCategory() // Kategori verilerini yükleme işlemi
     }
+
+
+    private fun initRecommended() {
+        binding.progressBarRecommendation.visibility=View.VISIBLE
+
+        viewModel.recommend.observe(this, Observer {
+            binding.viewRecommendation.layoutManager = GridLayoutManager(this@MainActivity,2)
+            binding.viewRecommendation.adapter=RecommendationAdapter(it)
+            binding.progressBarRecommendation.visibility=View.GONE
+    })
+        viewModel.loadRecommended()
+}
 
 }
