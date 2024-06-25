@@ -1,11 +1,13 @@
 package com.example.cosmeticecommerceprogramming.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.cosmeticecommerceprogramming.Activity.DetailActivity
 import com.example.cosmeticecommerceprogramming.Model.ItemsModel
 import com.example.cosmeticecommerceprogramming.databinding.ViewholderRecommendBinding
 
@@ -35,5 +37,11 @@ class RecommendationAdapter(val items:MutableList<ItemsModel>): RecyclerView.Ada
             .load(items[position].picUrl[0])
             .apply(RequestOptions.centerCropTransform())
             .into(holder.binding.pic)
+
+        holder.itemView.setOnClickListener{
+            val intent = Intent(holder.itemView.context,DetailActivity::class.java)
+            intent.putExtra("object",items[position])
+            holder.itemView.context.startActivity(intent)
+        }
     }
 }

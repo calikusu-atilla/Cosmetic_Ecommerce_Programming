@@ -10,21 +10,24 @@ data class ItemsModel(
     var size:ArrayList<String> = ArrayList(),             //Ürünün boyutlarının bir listesi
     var price: Double = 0.0,                              //Ürünün fiyatı
     var rating: Double = 0.0,                             //Ürün puanı
+    var numberInCart: Int = 0,
 
     ):Parcelable {    //Parcelable, verileri bir Intent ile diğer bir Activity'ye taşımak için kullanılan bir arayüzdür.
     constructor(parcel: Parcel) : this(
         parcel.readString().toString(),
         parcel.readString().toString(),
-        TODO("picUrl"),
-        TODO("size"),
+        parcel.createStringArrayList() as ArrayList<String>,
+        parcel.createStringArrayList() as ArrayList<String>,
         parcel.readDouble(),
-        parcel.readDouble()
+        parcel.readDouble(),
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(title)
         parcel.writeString(description)
+        parcel.writeStringList(picUrl)
+        parcel.writeStringList(size)
         parcel.writeDouble(price)
         parcel.writeDouble(rating)
     }
