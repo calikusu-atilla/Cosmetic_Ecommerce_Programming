@@ -28,8 +28,15 @@ class MainActivity : BaseActivity() {
         initBanners() // Banner/slider bileşenini başlatan fonksiyon
         initCategory()  // Kategori bileşenini başlatan fonksiyon
         initRecommended() // Recommended bileşenini başlatan fonksiyon
+        initBottomMenu()
 
 
+    }
+
+    private fun initBottomMenu() {
+        binding.cartBtn.setOnClickListener{
+            startActivity(this@MainActivity,CartActivity::class.java)
+        }
     }
 
     private fun initBanners() {
