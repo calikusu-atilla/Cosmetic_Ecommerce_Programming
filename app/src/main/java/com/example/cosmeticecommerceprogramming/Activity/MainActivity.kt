@@ -1,5 +1,6 @@
 package com.example.cosmeticecommerceprogramming.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
@@ -35,7 +36,7 @@ class MainActivity : BaseActivity() {
 
     private fun initBottomMenu() {
         binding.cartBtn.setOnClickListener{
-            startActivity(this@MainActivity,CartActivity::class.java)
+            startActivity(Intent(this@MainActivity,CartActivity::class.java))
         }
     }
 
