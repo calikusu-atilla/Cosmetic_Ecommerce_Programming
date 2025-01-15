@@ -10,5 +10,6 @@
     <style name="CircleImageView">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">10%</item>
+        <item name="android:windowTranslucentNavigation">true</item> //XML satırı, Android'de pencere gezinti çubuğunu yarı saydam hale getirmek için
     </style>
 </resources>

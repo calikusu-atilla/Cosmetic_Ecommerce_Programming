@@ -43,10 +43,7 @@ class CartActivity : BaseActivity() {
             override fun onChanged() {
                 calculateCart()
             }
-
-
         }
-
         )
 
     }

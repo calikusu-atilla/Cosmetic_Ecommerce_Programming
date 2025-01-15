@@ -26,7 +26,7 @@ class MainViewModel():ViewModel() {
 
     fun loadRecommended(){
         val Ref = firebaseDatabase.getReference("Items")
-        Ref.addValueEventListener((object : ValueEventListener{
+        Ref.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                val list = mutableListOf<ItemsModel>()
                 for (child in snapshot.children){
@@ -41,23 +41,21 @@ class MainViewModel():ViewModel() {
             override fun onCancelled(error: DatabaseError) {
 
             }
-        }))
-
-
+        })
     }
 
     fun loadCategory() {
         val Ref = firebaseDatabase.getReference("Category")
         Ref.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                val list = mutableListOf<CategoryModel>()
+                val lists = mutableListOf<CategoryModel>()
                 for (child in snapshot.children){
                     val data = child.getValue(CategoryModel::class.java)
                     if (data!=null) {
-                        list.add(data)
+                        lists.add(data)
                     }
                 }
-                _category.value = list
+                _category.value = lists
             }
 
             override fun onCancelled(error: DatabaseError) {

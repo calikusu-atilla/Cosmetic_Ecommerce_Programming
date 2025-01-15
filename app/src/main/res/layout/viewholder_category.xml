@@ -12,8 +12,9 @@
 
     <ImageView
         android:id="@+id/category_pic"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:scaleType="fitCenter"
         android:background="@drawable/white_bg_oval"
          />
 
